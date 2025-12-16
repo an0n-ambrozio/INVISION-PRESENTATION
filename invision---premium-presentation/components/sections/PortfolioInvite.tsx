@@ -1,6 +1,6 @@
 import React from 'react';
 import SectionWrapper from '../SectionWrapper';
-import { motion } from 'framer-motion';
+
 import { ArrowRight } from 'lucide-react';
 
 const PortfolioInvite: React.FC = () => {
@@ -23,13 +23,7 @@ const PortfolioInvite: React.FC = () => {
       </div>
 
       <div className="relative z-20 w-full max-w-7xl px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="bg-[#0A0A0A] border border-white/5 p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 group hover:border-invision-orange/20 transition-colors duration-500"
-        >
+        <div className="bg-[#0A0A0A] border border-white/5 p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 group hover:border-invision-orange/20 transition-colors duration-500">
           {/* Left Content */}
           <div className="flex flex-col items-start text-left max-w-2xl">
             <div className="inline-flex items-center gap-3 mb-6">
@@ -61,7 +55,7 @@ const PortfolioInvite: React.FC = () => {
             </button>
           </div>
 
-        </motion.div>
+        </div>
       </div>
     </SectionWrapper>
   );

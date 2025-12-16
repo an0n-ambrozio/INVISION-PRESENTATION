@@ -1,6 +1,6 @@
 import React from 'react';
 import SectionWrapper from '../SectionWrapper';
-import { motion } from 'framer-motion';
+
 
 const Importance: React.FC = () => {
   return (
@@ -10,12 +10,7 @@ const Importance: React.FC = () => {
 
       {/* Center Content */}
       <div className="relative z-10 max-w-6xl mx-auto w-full text-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
+        <div>
           {/* Watermark Number */}
           <h2 className="text-[120px] md:text-[200px] font-bold text-white/[0.03] leading-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none">
             03
@@ -23,13 +18,7 @@ const Importance: React.FC = () => {
 
           {/* Main Statement */}
           <div className="relative py-20">
-            <motion.div
-              initial={{ height: 0 }}
-              whileInView={{ height: 100 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="w-[1px] bg-invision-orange mx-auto mb-10 hidden md:block"
-            />
+            <div className="w-[1px] bg-invision-orange mx-auto mb-10 hidden md:block h-[100px]" />
 
             <span className="text-invision-orange font-medium tracking-[0.4em] uppercase text-xs block mb-8">
               A Estratégia
@@ -44,15 +33,9 @@ const Importance: React.FC = () => {
               Em um mundo de incertezas, a <span className="text-white">previsibilidade</span> se torna o ativo mais valioso do seu portfólio.
             </p>
 
-            <motion.div
-              initial={{ height: 0 }}
-              whileInView={{ height: 100 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.5 }}
-              className="w-[1px] bg-gradient-to-b from-invision-orange to-transparent mx-auto mt-10 hidden md:block"
-            />
+            <div className="w-[1px] bg-gradient-to-b from-invision-orange to-transparent mx-auto mt-10 hidden md:block h-[100px]" />
           </div>
-        </motion.div>
+        </div>
       </div>
     </SectionWrapper>
   );

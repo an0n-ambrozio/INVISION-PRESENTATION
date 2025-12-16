@@ -80,6 +80,30 @@
           overflow: hidden !important;
           scroll-snap-align: start;
         }
+
+        /* Essential Fix for "Card taking whole page" issue */
+        /* Forces containers to shrink to fit the viewport in print mode */
+        @media print {
+            .grid, .flex {
+                max-height: 100vh !important;
+                overflow: hidden !important;
+            }
+            img {
+                max-width: 100% !important;
+                max-height: 100% !important;
+                object-fit: cover !important;
+            }
+            /* Specific fix to ensure Bio/Portfolio don't overflow */
+            section > div {
+                 transform: scale(0.9) !important; /* Slight zoom out to ensure safe margins */
+                 transform-origin: center center !important;
+                 width: 100% !important;
+                 height: 100% !important;
+                 display: flex !important;
+                 flex-direction: column !important;
+                 justify-content: center !important;
+            }
+        }
         /* Last section shouldn't force a blank page after it */
         section:last-of-type {
           break-after: avoid;

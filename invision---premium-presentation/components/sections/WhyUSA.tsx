@@ -1,6 +1,6 @@
 import React from 'react';
 import SectionWrapper from '../SectionWrapper';
-import { motion } from 'framer-motion';
+
 import { ShieldCheck, DollarSign, TrendingUp, Lock } from 'lucide-react';
 
 const WhyUSA: React.FC = () => {
@@ -26,15 +26,10 @@ const WhyUSA: React.FC = () => {
         </div>
 
         {/* Bento Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-1 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 print:grid-cols-3 grid-rows-1 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
 
           {/* Hero Card - Spans 2 rows, 1 col on Desktop */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="col-span-1 md:col-span-1 md:row-span-2 bg-[#0A0A0A] border border-white/10 p-8 rounded-sm relative overflow-hidden group hover:border-invision-orange/30 transition-colors duration-500"
-          >
+          <div className="col-span-1 md:col-span-1 md:row-span-2 print:col-span-1 print:row-span-2 bg-[#0A0A0A] border border-white/10 p-8 rounded-sm relative overflow-hidden group hover:border-invision-orange/30 transition-colors duration-500">
             <div className="absolute inset-0 bg-[url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Map_of_the_USA_without_text.svg/2560px-Map_of_the_USA_without_text.svg.png')] bg-cover bg-center opacity-10 grayscale group-hover:scale-110 transition-transform duration-1000"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
 
@@ -45,16 +40,10 @@ const WhyUSA: React.FC = () => {
                 Em tempos de volatilidade global, o mercado americano oferece a proteção patrimonial que nenhum outro mercado consegue igualar.
               </p>
             </div>
-          </motion.div>
+          </div>
 
           {/* Feature Card 1: Moeda Forte */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="col-span-1 md:col-span-1 md:row-span-1 bg-[#0A0A0A] border border-white/10 p-6 rounded-sm relative group hover:bg-white/[0.02] transition-colors"
-          >
+          <div className="col-span-1 md:col-span-1 md:row-span-1 print:col-span-1 print:row-span-1 bg-[#0A0A0A] border border-white/10 p-6 rounded-sm relative group hover:bg-white/[0.02] transition-colors">
             <div className="flex justify-between items-start mb-8">
               <div className="p-3 bg-white/5 rounded-full text-white">
                 <DollarSign size={24} />
@@ -67,16 +56,10 @@ const WhyUSA: React.FC = () => {
             </div>
             {/* Decorative Line Graph */}
             <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-green-500/50 to-green-500/0"></div>
-          </motion.div>
+          </div>
 
           {/* Feature Card 2: Segurança Jurídica */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="col-span-1 md:col-span-1 md:row-span-1 bg-[#0A0A0A] border border-white/10 p-6 rounded-sm relative group hover:bg-white/[0.02] transition-colors"
-          >
+          <div className="col-span-1 md:col-span-1 md:row-span-1 print:col-span-1 print:row-span-1 bg-[#0A0A0A] border border-white/10 p-6 rounded-sm relative group hover:bg-white/[0.02] transition-colors">
             <div className="flex justify-between items-start mb-8">
               <div className="p-3 bg-white/5 rounded-full text-white">
                 <Lock size={24} />
@@ -86,16 +69,10 @@ const WhyUSA: React.FC = () => {
               <h4 className="text-xl text-white font-serif mb-2">Segurança Jurídica</h4>
               <p className="text-sm text-gray-500">Direitos de propriedade inabaláveis garantidos pela democracia mais estável do mundo.</p>
             </div>
-          </motion.div>
+          </div>
 
           {/* Feature Card 3: Demanda (Wide) */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="col-span-1 md:col-span-2 md:row-span-1 bg-[#0A0A0A] border border-white/10 p-6 rounded-sm flex flex-col md:flex-row items-center gap-8 group"
-          >
+          <div className="col-span-1 md:col-span-2 md:row-span-1 print:col-start-2 print:col-span-2 print:row-span-1 bg-[#0A0A0A] border border-white/10 p-6 rounded-sm flex flex-col md:flex-row items-center gap-8 group">
             <div className="flex-1">
               <div className="inline-flex items-center gap-2 mb-4">
                 <TrendingUp size={16} className="text-invision-orange" />
@@ -113,7 +90,7 @@ const WhyUSA: React.FC = () => {
               <div className="w-1/5 h-[80%] bg-white/30 rounded-t-sm"></div>
               <div className="w-1/5 h-[100%] bg-invision-orange rounded-t-sm shadow-[0_0_15px_rgba(255,163,47,0.5)]"></div>
             </div>
-          </motion.div>
+          </div>
 
         </div>
       </div>

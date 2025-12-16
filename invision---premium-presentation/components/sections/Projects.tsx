@@ -1,6 +1,6 @@
 import React from 'react';
 import SectionWrapper from '../SectionWrapper';
-import { motion } from 'framer-motion';
+
 import { MapPin, BedDouble, Ruler, ArrowRight } from 'lucide-react';
 
 const Projects: React.FC = () => {
@@ -66,22 +66,18 @@ const Projects: React.FC = () => {
       </div>
 
       {/* Grid Layout */}
-      <div className="max-w-7xl mx-auto w-full px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="max-w-7xl mx-auto w-full px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 print:grid-cols-4 gap-6">
         {projects.map((project, index) => (
-          <motion.div
+          <div
             key={index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
             className="relative aspect-[3/5] group overflow-hidden bg-invision-card border border-white/5 rounded-sm"
           >
             <img
               src={project.image}
               alt={project.address}
-              className="w-full h-full object-cover grayscale-0 transition-all duration-700 scale-105 group-hover:scale-110"
+              className="w-full h-full object-cover grayscale-0 scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-60"></div>
 
             {/* Top Tag */}
             <div className="absolute top-4 left-4">
@@ -90,7 +86,7 @@ const Projects: React.FC = () => {
               </span>
             </div>
 
-            <div className="absolute bottom-0 left-0 w-full p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+            <div className="absolute bottom-0 left-0 w-full p-6 translate-y-0">
               <h3 className="text-2xl font-serif text-white mb-2 leading-none">{project.address}</h3>
 
               <div className="flex flex-col gap-1 border-t border-white/20 pt-3 mt-3 text-gray-300">
@@ -104,7 +100,7 @@ const Projects: React.FC = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
 

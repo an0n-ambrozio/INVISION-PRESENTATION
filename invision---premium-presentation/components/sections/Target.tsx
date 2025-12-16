@@ -1,6 +1,6 @@
 import React from 'react';
 import SectionWrapper from '../SectionWrapper';
-import { motion } from 'framer-motion';
+
 import { Shield, Globe, Zap } from 'lucide-react';
 
 const Target: React.FC = () => {
@@ -38,39 +38,25 @@ const Target: React.FC = () => {
 
                 {/* Header */}
                 <div className="text-center mb-24">
-                    <motion.span
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="block text-invision-orange font-bold tracking-[0.3em] uppercase text-xs mb-6"
-                    >
+                    <span className="block text-invision-orange font-bold tracking-[0.3em] uppercase text-xs mb-6">
                         Quem Servimos
-                    </motion.span>
+                    </span>
 
-                    <motion.h2
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        className="text-4xl md:text-6xl font-serif text-white leading-tight"
-                    >
+                    <h2 className="text-4xl md:text-6xl font-serif text-white leading-tight">
                         A Elite do Investimento <br />
                         <span className="italic text-gray-500 text-3xl md:text-5xl">Global</span>
-                    </motion.h2>
+                    </h2>
                 </div>
 
                 {/* Profiles Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 print:grid-cols-3 gap-8">
                     {profiles.map((profile, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.2 }}
                             className="group relative bg-[#0A0A0A] border border-white/5 p-10 rounded-sm overflow-hidden hover:-translate-y-2 transition-transform duration-500"
                         >
-                            {/* Spotlight Effect */}
-                            <div className={`absolute inset-0 bg-gradient-to-b ${profile.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`}></div>
+                            {/* Spotlight Effect - Visible on Print/Hover */}
+                            <div className={`absolute inset-0 bg-gradient-to-b ${profile.color} opacity-0 group-hover:opacity-100 print:opacity-30 transition-opacity duration-700 pointer-events-none`}></div>
 
                             <div className="relative z-10 flex flex-col items-center text-center">
                                 <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white mb-8 group-hover:scale-110 group-hover:border-white/30 transition-all duration-500">
@@ -84,7 +70,7 @@ const Target: React.FC = () => {
                                     {profile.desc}
                                 </p>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
 

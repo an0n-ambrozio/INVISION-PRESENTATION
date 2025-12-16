@@ -1,6 +1,6 @@
 import React from 'react';
 import SectionWrapper from '../SectionWrapper';
-import { motion } from 'framer-motion';
+
 import { ArrowRight, Star } from 'lucide-react';
 
 const CompetitiveAdvantage: React.FC = () => {
@@ -11,12 +11,7 @@ const CompetitiveAdvantage: React.FC = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-invision-orange/5 via-transparent to-transparent opacity-40 blur-3xl pointer-events-none"></div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
+        <div>
           {/* The Black Card Container */}
           <div className="relative bg-[#080808] border border-white/5 p-12 md:p-20 overflow-hidden group">
 
@@ -61,7 +56,7 @@ const CompetitiveAdvantage: React.FC = () => {
               </p>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </SectionWrapper>
   );

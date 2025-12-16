@@ -1,6 +1,6 @@
 import React from 'react';
 import SectionWrapper from '../SectionWrapper';
-import { motion } from 'framer-motion';
+
 import { TrendingUp, ShieldCheck, Star, Crown, ArrowRight } from 'lucide-react';
 
 const Success: React.FC = () => {
@@ -40,29 +40,21 @@ const Success: React.FC = () => {
 
         {/* Header - Strictly Aligned Left */}
         <div className="mb-16 border-b border-white/10 pb-8">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <h2 className="text-invision-orange font-bold tracking-[0.2em] uppercase text-xs mb-4">
               Por que Invision?
             </h2>
             <h3 className="text-4xl md:text-6xl font-serif text-white">
               Sucesso Definido
             </h3>
-          </motion.div>
+          </div>
         </div>
 
         {/* List - Strictly Functional & Aligned */}
         <div className="flex flex-col">
           {pillars.map((item, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
               className="group border-b border-white/10 hover:bg-white/[0.02] transition-colors duration-300"
             >
               <div className="py-8 flex flex-col md:flex-row items-center md:items-start w-full gap-6 md:gap-0">
@@ -93,7 +85,7 @@ const Success: React.FC = () => {
                 </div>
 
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import SectionWrapper from '../SectionWrapper';
-import { motion } from 'framer-motion';
+
 import { Percent, Ban, ShieldCheck, ArrowUpRight } from 'lucide-react';
 
 const Solution: React.FC = () => {
@@ -33,25 +33,19 @@ const Solution: React.FC = () => {
         style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
       </div>
 
-      {/* Animated Blueprint Lines */}
+      {/* Animated Blueprint Lines - Static for Print/Simplicity */}
       <svg className="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-20">
-        <motion.path
+        <path
           d="M 0 100 L 1000 100 L 1000 800"
           fill="transparent"
           stroke="#FFA32F"
           strokeWidth="1"
-          initial={{ pathLength: 0 }}
-          whileInView={{ pathLength: 1 }}
-          transition={{ duration: 2, ease: "easeInOut" }}
         />
-        <motion.path
+        <path
           d="M 500 0 L 500 1000"
           fill="transparent"
           stroke="#FFA32F"
           strokeWidth="1"
-          initial={{ pathLength: 0 }}
-          whileInView={{ pathLength: 1 }}
-          transition={{ duration: 1.5, ease: "easeInOut", delay: 0.5 }}
         />
       </svg>
 
@@ -59,28 +53,19 @@ const Solution: React.FC = () => {
 
         {/* Header */}
         <div className="text-center mb-20">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="inline-block border text-invision-orange border-invision-orange/30 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-[0.2em] mb-6"
-          >
+          <div className="inline-block border text-invision-orange border-invision-orange/30 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-[0.2em] mb-6">
             O Blueprint do Sucesso
-          </motion.div>
+          </div>
           <h2 className="text-5xl md:text-7xl font-sans font-light text-white leading-tight">
             Nossa Solução <br /> <span className="font-serif italic text-white/50">Única</span>
           </h2>
         </div>
 
         {/* 3 Pillars Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 print:grid-cols-3 gap-8">
           {points.map((item, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
               className="group relative bg-[#0A0A0A] border-t border-white/10 p-8 h-[400px] flex flex-col justify-between hover:border-invision-orange transition-colors duration-500"
             >
               {/* Hover Glow */}
@@ -111,7 +96,7 @@ const Solution: React.FC = () => {
                 <ArrowUpRight size={16} className="text-invision-orange" />
               </div>
 
-            </motion.div>
+            </div>
           ))}
         </div>
 

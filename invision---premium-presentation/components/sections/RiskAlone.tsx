@@ -1,6 +1,6 @@
 import React from 'react';
 import SectionWrapper from '../SectionWrapper';
-import { motion } from 'framer-motion';
+
 import { AlertTriangle, XCircle, AlertOctagon } from 'lucide-react';
 
 const RiskAlone: React.FC = () => {
@@ -32,12 +32,7 @@ const RiskAlone: React.FC = () => {
 
         {/* Header */}
         <div className="text-center mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
+          <div>
             <div className="inline-flex items-center gap-3 mb-6 px-4 py-1 border border-red-500/20 bg-red-900/5 backdrop-blur-sm rounded-none">
               <AlertOctagon size={14} className="text-red-500" />
               <span className="text-red-500 font-bold tracking-[0.2em] uppercase text-[10px]">Atenção Crítica</span>
@@ -50,18 +45,14 @@ const RiskAlone: React.FC = () => {
             <p className="text-gray-400 font-light text-lg max-w-2xl mx-auto">
               O mercado imobiliário internacional não perdoa amadores. A complexidade jurídica e tributária exige navegação experiente.
             </p>
-          </motion.div>
+          </div>
         </div>
 
         {/* The Monoliths Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 print:grid-cols-3 gap-6">
           {risks.map((risk, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.15 }}
               className="group relative bg-[#080808] border border-white/5 p-10 hover:border-red-500/30 transition-colors duration-500 flex flex-col items-start min-h-[320px]"
             >
               {/* Gradient Glow - Permanent */}
@@ -81,7 +72,7 @@ const RiskAlone: React.FC = () => {
 
               {/* Bottom line accent - Permanent and Full Width */}
               <div className="absolute bottom-0 left-0 w-full h-[2px] bg-red-500/50"></div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
