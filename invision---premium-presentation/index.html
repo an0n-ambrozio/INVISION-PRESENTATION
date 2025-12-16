@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INVISION Investments</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              invision: {
+                black: '#050505',   // Deepest Black
+                card: '#121212',    // Surface Color
+                orange: '#FF9F29',  // Gold/Orange Accent
+                text: '#E0E0E0',    // Primary Text (Off-white)
+                muted: '#858585',   // Secondary Text
+                border: '#2A2A2A',  // Dark Borders
+              }
+            },
+            fontFamily: {
+              sans: ['"Manrope"', 'sans-serif'],
+              support: ['"Inter"', 'sans-serif'],
+            },
+            backgroundImage: {
+              'gradient-dark': 'radial-gradient(circle at top right, #1a1a1a 0%, #050505 100%)',
+              'gradient-glow': 'conic-gradient(from 180deg at 50% 50%, #050505 0%, #111111 50%, #050505 100%)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        margin: 0;
+        background-color: #050505;
+        color: #E0E0E0;
+        overflow-x: hidden;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      
+      /* Scroll Snapping for Presentation Feel */
+      html {
+        scroll-behavior: smooth;
+        height: 100%;
+        scroll-snap-type: y mandatory;
+      }
+      body {
+        height: 100%;
+      }
+      #root {
+        height: 100%;
+      }
+
+      /* PDF Export Rules - Strict A4 Landscape Enforcement */
+      @media print {
+        @page {
+          size: landscape;
+          margin: 0;
+        }
+        body {
+          margin: 0;
+          -webkit-print-color-adjust: exact;
+        }
+        /* Force each section to be exactly one page */
+        section {
+          break-after: page;
+          page-break-after: always;
+          height: 100vh !important;
+          max-height: 100vh !important;
+          min-height: 100vh !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          overflow: hidden !important;
+          scroll-snap-align: start;
+        }
+        /* Last section shouldn't force a blank page after it */
+        section:last-of-type {
+          break-after: avoid;
+          page-break-after: avoid;
+        }
+        
+        /* Hide UI elements */
+        header {
+            position: absolute !important;
+            top: 0 !important;
+        }
+        footer, ::-webkit-scrollbar {
+            display: none !important;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "framer-motion": "https://esm.sh/framer-motion@^12.23.26"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
